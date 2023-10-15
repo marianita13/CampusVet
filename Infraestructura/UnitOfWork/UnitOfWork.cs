@@ -81,6 +81,14 @@ namespace Infraestructura.UnitOfWork
                 return _Mascotas;
             }
         }
+        public IPais pais{
+            get{
+                if(_Paises == null){
+                    _Paises = new PaisRepository(_context);
+                }
+                return _Paises;
+            }
+        }
         public IRaza raza{
             get{
                 if(_Razas == null){

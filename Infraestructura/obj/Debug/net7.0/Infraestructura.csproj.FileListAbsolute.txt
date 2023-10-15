@@ -1,0 +1,15 @@
+C:\Users\Janus\OneDrive\Documentos\CampusVet-1\Infraestructura\bin\Debug\net7.0\Infraestructura.deps.json
+C:\Users\Janus\OneDrive\Documentos\CampusVet-1\Infraestructura\bin\Debug\net7.0\Infraestructura.dll
+C:\Users\Janus\OneDrive\Documentos\CampusVet-1\Infraestructura\bin\Debug\net7.0\Infraestructura.pdb
+C:\Users\Janus\OneDrive\Documentos\CampusVet-1\Infraestructura\bin\Debug\net7.0\Core.dll
+C:\Users\Janus\OneDrive\Documentos\CampusVet-1\Infraestructura\bin\Debug\net7.0\Core.pdb
+C:\Users\Janus\OneDrive\Documentos\CampusVet-1\Infraestructura\obj\Debug\net7.0\Infraestructura.csproj.AssemblyReference.cache
+C:\Users\Janus\OneDrive\Documentos\CampusVet-1\Infraestructura\obj\Debug\net7.0\Infraestructura.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Janus\OneDrive\Documentos\CampusVet-1\Infraestructura\obj\Debug\net7.0\Infraestructura.AssemblyInfoInputs.cache
+C:\Users\Janus\OneDrive\Documentos\CampusVet-1\Infraestructura\obj\Debug\net7.0\Infraestructura.AssemblyInfo.cs
+C:\Users\Janus\OneDrive\Documentos\CampusVet-1\Infraestructura\obj\Debug\net7.0\Infraestructura.csproj.CoreCompileInputs.cache
+C:\Users\Janus\OneDrive\Documentos\CampusVet-1\Infraestructura\obj\Debug\net7.0\Infraestructura.csproj.CopyComplete
+C:\Users\Janus\OneDrive\Documentos\CampusVet-1\Infraestructura\obj\Debug\net7.0\Infraestructura.dll
+C:\Users\Janus\OneDrive\Documentos\CampusVet-1\Infraestructura\obj\Debug\net7.0\refint\Infraestructura.dll
+C:\Users\Janus\OneDrive\Documentos\CampusVet-1\Infraestructura\obj\Debug\net7.0\Infraestructura.pdb
+C:\Users\Janus\OneDrive\Documentos\CampusVet-1\Infraestructura\obj\Debug\net7.0\ref\Infraestructura.dll

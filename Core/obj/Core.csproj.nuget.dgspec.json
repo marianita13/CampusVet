@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maria\\Documents\\CampusVet\\Core\\Core.csproj": {}
+    "C:\\Users\\Janus\\OneDrive\\Documentos\\CampusVet-1\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maria\\Documents\\CampusVet\\Core\\Core.csproj": {
+    "C:\\Users\\Janus\\OneDrive\\Documentos\\CampusVet-1\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maria\\Documents\\CampusVet\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\Janus\\OneDrive\\Documentos\\CampusVet-1\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\maria\\Documents\\CampusVet\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maria\\Documents\\CampusVet\\Core\\obj\\",
+        "projectPath": "C:\\Users\\Janus\\OneDrive\\Documentos\\CampusVet-1\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\Janus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Janus\\OneDrive\\Documentos\\CampusVet-1\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Janus\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -724,19 +724,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maria\\.nuget\\packages\\": {}
+    "C:\\Users\\Janus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maria\\Documents\\CampusVet\\Infraestructura\\Infraestructura.csproj",
+      "projectUniqueName": "C:\\Users\\Janus\\OneDrive\\Documentos\\CampusVet-1\\Infraestructura\\Infraestructura.csproj",
       "projectName": "Infraestructura",
-      "projectPath": "C:\\Users\\maria\\Documents\\CampusVet\\Infraestructura\\Infraestructura.csproj",
-      "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maria\\Documents\\CampusVet\\Infraestructura\\obj\\",
+      "projectPath": "C:\\Users\\Janus\\OneDrive\\Documentos\\CampusVet-1\\Infraestructura\\Infraestructura.csproj",
+      "packagesPath": "C:\\Users\\Janus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Janus\\OneDrive\\Documentos\\CampusVet-1\\Infraestructura\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Janus\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -748,8 +748,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\maria\\Documents\\CampusVet\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\maria\\Documents\\CampusVet\\Core\\Core.csproj"
+            "C:\\Users\\Janus\\OneDrive\\Documentos\\CampusVet-1\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\Janus\\OneDrive\\Documentos\\CampusVet-1\\Core\\Core.csproj"
             }
           }
         }
@@ -793,7 +793,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

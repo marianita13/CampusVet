@@ -10,7 +10,7 @@ namespace Infraestructura.Data.Configuration
 {
     public class ServicioConfiguiration : IEntityTypeConfiguration<Servicio>
     {
-         public void Configure(EntityTypeBuilder<Servicio> builder)
+        public void Configure(EntityTypeBuilder<Servicio> builder)
         {
             // Aquí puedes configurar las propiedades de la entidad Marca
             // utilizando el objeto 'builder'.

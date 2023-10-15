@@ -10,7 +10,7 @@ namespace Infraestructura.Data.Configuration
 {
     public class DepartamentoConfiguration : IEntityTypeConfiguration<Departamento>
     {
-         public void Configure(EntityTypeBuilder<Departamento> builder)
+        public void Configure(EntityTypeBuilder<Departamento> builder)
         {
             // Aquí puedes configurar las propiedades de la entidad Marca
             // utilizando el objeto 'builder'.

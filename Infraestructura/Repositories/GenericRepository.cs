@@ -37,15 +37,9 @@ namespace Infraestructura.Repositories
         public virtual async Task<IEnumerable<T>> GetAllAsync()
         {
             return await _context.Set<T>().ToListAsync();
-            //return (IEnumerable<T>)await _context.Paises.FromSqlRaw("SELECT * FROM pais").ToListAsync();
         }
 
-        public virtual async Task<T> GetByIdAsync(int id)
-        {
-            return await _context.Set<T>().FindAsync(id);
-        }
-
-        public virtual async Task<T> GetByIdAsync(string id)
+        public virtual async Task<T> GetIdAsync(int id)
         {
             return await _context.Set<T>().FindAsync(id);
         }

@@ -10,7 +10,7 @@ namespace Infraestructura.Data.Configuration
 {
     public class MascotaConfiguration : IEntityTypeConfiguration<Mascota>
     {
-       public void Configure(EntityTypeBuilder<Mascota> builder)
+        public void Configure(EntityTypeBuilder<Mascota> builder)
         {
             // Aquí puedes configurar las propiedades de la entidad Marca
             // utilizando el objeto 'builder'.

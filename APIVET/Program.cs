@@ -2,6 +2,7 @@ using System.Reflection;
 using APIVET.Extension;
 using Infraestructura.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,11 +17,12 @@ builder.Services.ConfigureRatelimiting();
 builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+// builder.Services.AddApplicationServices();
 
-builder.Services.AddDbContext<AnimalsVetContext>(options =>
+builder.Services.AddDbContext<AnimalsVetContext>(OptionsBuilder =>
 {
     string connectionString = builder.Configuration.GetConnectionString("MySQLConexion");
-    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+    OptionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 
 var app = builder.Build();

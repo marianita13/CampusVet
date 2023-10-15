@@ -24,36 +24,33 @@ namespace Infraestructura.Data.Configuration
             .HasMaxLength(50);
 
             builder.Property(p => p.NumeroPri)
+            .IsRequired()
             .HasColumnType("int");
 
             builder.Property(p => p.Letra)
-            .IsRequired()
             .HasMaxLength(1);
 
             builder.Property(p => p.Bis)
-            .IsRequired()
             .HasMaxLength(3);
 
             builder.Property(p => p.LetraSec)
-            .IsRequired()
             .HasMaxLength(2);
 
             builder.Property(p => p.Cardinal)
-            .IsRequired()
             .HasMaxLength(10);
 
             builder.Property(p => p.NumeroSec)
+            .IsRequired()
             .HasColumnType("int");
 
             builder.Property(p => p.LetraTer)
-            .IsRequired()
             .HasMaxLength(10);
 
             builder.Property(p => p.NumeroTer)
+            .IsRequired()
             .HasColumnType("int");
 
             builder.Property(p => p.CardinalSec)
-            .IsRequired()
             .HasMaxLength(10);
 
             builder.Property(p => p.Complemento)

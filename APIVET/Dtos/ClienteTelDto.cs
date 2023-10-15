@@ -1,12 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using APIVET.Controllers;
 
 namespace APIVET.Dtos
 {
-    public class ClienteTelDto
+    public class ClienteTelDto : BaseController
     {
-        
+        public int Id {get; set;}
+        public int IdCliente { get; set; }
+        public string Numero { get; set; }
     }
 }

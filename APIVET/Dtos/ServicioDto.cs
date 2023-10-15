@@ -1,12 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using APIVET.Controllers;
+using Core.entities;
 
 namespace APIVET.Dtos
 {
-    public class ServicioDto
+    public class ServicioDto : BaseController
     {
-        
+        public int Id {get; set;}
+        public string Nombre { get; set; }
+        public double Precio { get; set; }
+        public ICollection<Cita> Citas { get; set; }
     }
 }

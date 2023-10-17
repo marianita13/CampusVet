@@ -2747,19 +2747,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Janus\\.nuget\\packages\\": {}
+    "C:\\Users\\USER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Janus\\OneDrive\\Documentos\\CampusVet-1\\APIVET\\APIVET.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\Desktop\\CampusVet\\APIVET\\APIVET.csproj",
       "projectName": "APIVET",
-      "projectPath": "C:\\Users\\Janus\\OneDrive\\Documentos\\CampusVet-1\\APIVET\\APIVET.csproj",
-      "packagesPath": "C:\\Users\\Janus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Janus\\OneDrive\\Documentos\\CampusVet-1\\APIVET\\obj\\",
+      "projectPath": "C:\\Users\\USER\\Desktop\\CampusVet\\APIVET\\APIVET.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\USER\\Desktop\\CampusVet\\APIVET\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Janus\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -2771,8 +2771,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Janus\\OneDrive\\Documentos\\CampusVet-1\\Infraestructura\\Infraestructura.csproj": {
-              "projectPath": "C:\\Users\\Janus\\OneDrive\\Documentos\\CampusVet-1\\Infraestructura\\Infraestructura.csproj"
+            "C:\\Users\\USER\\Desktop\\CampusVet\\Infraestructura\\Infraestructura.csproj": {
+              "projectPath": "C:\\Users\\USER\\Desktop\\CampusVet\\Infraestructura\\Infraestructura.csproj"
             }
           }
         }
@@ -2845,7 +2845,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

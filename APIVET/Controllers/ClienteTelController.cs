@@ -6,12 +6,12 @@ using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
-public class PaisController: BaseController
+public class ClienteTelController: BaseController
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public PaisController(IUnitOfWork unitOfWork, IMapper mapper)
+        public ClienteTelController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -20,56 +20,56 @@ public class PaisController: BaseController
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<IEnumerable<PaisDto>>> Get()
+        public async Task<ActionResult<IEnumerable<ClienteTelDto>>> Get()
         {
-            var Paises = await _unitOfWork.Paises.GetAllAsync();
-            return _mapper.Map<List<PaisDto>>(Paises);
+            var ClienteTelDtoes = await _unitOfWork.ClienteTelefonos.GetAllAsync();
+            return _mapper.Map<List<ClienteTelDto>>(ClienteTelDtoes);
         }
 
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<PaisDto>> Get(int id)
+        public async Task<ActionResult<ClienteTelDto>> Get(int id)
         {
-            var Pais = await _unitOfWork.Paises.GetIdAsync(id);
-            if(Pais == null)
+            var ClienteTelDto = await _unitOfWork.ClienteTelefonos.GetIdAsync(id);
+            if(ClienteTelDto == null)
             {
                 return NotFound();
             }
-            return _mapper.Map<PaisDto>(Pais);
+            return _mapper.Map<ClienteTelDto>(ClienteTelDto);
         }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<PaisDto>> Post(PaisDto PaisDto)
+        public async Task<ActionResult<ClienteTelDto>> Post(ClienteTelDto ClienteTelDtoDto)
         {
-            var Pais = _mapper.Map<Pais>(PaisDto);
-            this._unitOfWork.Paises.Add(Pais);
+            var ClienteTelDto = _mapper.Map<ClienteTelefono>(ClienteTelDtoDto);
+            this._unitOfWork.ClienteTelefonos.Add(ClienteTelDto);
             await _unitOfWork.SaveAsync();
-            if(Pais == null)
+            if(ClienteTelDto == null)
             {
                 return BadRequest();
             }
-            PaisDto.Id = Pais.Id;
-            return CreatedAtAction(nameof(Post), new {id = PaisDto.Id}, PaisDto);
+            ClienteTelDtoDto.Id = ClienteTelDto.Id;
+            return CreatedAtAction(nameof(Post), new {id = ClienteTelDtoDto.Id}, ClienteTelDtoDto);
         }
 
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<PaisDto>> Put(int id, [FromBody] PaisDto PaisDto)
+        public async Task<ActionResult<ClienteTelDto>> Put(int id, [FromBody] ClienteTelDto ClienteTelDtoDto)
         {
-            if(PaisDto == null)
+            if(ClienteTelDtoDto == null)
             {
                 return NotFound();
             }
-            var Paises = _mapper.Map<Pais>(PaisDto);
-            _unitOfWork.Paises.Update(Paises);
+            var ClienteTelDtoes = _mapper.Map<ClienteTelefono>(ClienteTelDtoDto);
+            _unitOfWork.ClienteTelefonos.Update(ClienteTelDtoes);
             await _unitOfWork.SaveAsync();
-            return PaisDto;
+            return ClienteTelDtoDto;
         }
 
         [HttpDelete("{id}")]
@@ -77,12 +77,12 @@ public class PaisController: BaseController
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete(int id)
         {
-            var Pais = await _unitOfWork.Paises.GetIdAsync(id);
-            if(Pais == null)
+            var ClienteTelDto = await _unitOfWork.ClienteTelefonos.GetIdAsync(id);
+            if(ClienteTelDto == null)
             {
                 return NotFound();
             }
-            _unitOfWork.Paises.Remove(Pais);
+            _unitOfWork.ClienteTelefonos.Remove(ClienteTelDto);
             await _unitOfWork.SaveAsync();
             return NoContent();
         }

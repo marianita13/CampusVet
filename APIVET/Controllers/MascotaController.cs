@@ -6,12 +6,12 @@ using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
-public class PaisController: BaseController
+public class MascotaController: BaseController
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public PaisController(IUnitOfWork unitOfWork, IMapper mapper)
+        public MascotaController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -20,56 +20,56 @@ public class PaisController: BaseController
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<IEnumerable<PaisDto>>> Get()
+        public async Task<ActionResult<IEnumerable<MascotaDto>>> Get()
         {
-            var Paises = await _unitOfWork.Paises.GetAllAsync();
-            return _mapper.Map<List<PaisDto>>(Paises);
+            var Mascotaes = await _unitOfWork.Mascotas.GetAllAsync();
+            return _mapper.Map<List<MascotaDto>>(Mascotaes);
         }
 
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<PaisDto>> Get(int id)
+        public async Task<ActionResult<MascotaDto>> Get(int id)
         {
-            var Pais = await _unitOfWork.Paises.GetIdAsync(id);
-            if(Pais == null)
+            var Mascota = await _unitOfWork.Mascotas.GetIdAsync(id);
+            if(Mascota == null)
             {
                 return NotFound();
             }
-            return _mapper.Map<PaisDto>(Pais);
+            return _mapper.Map<MascotaDto>(Mascota);
         }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<PaisDto>> Post(PaisDto PaisDto)
+        public async Task<ActionResult<MascotaDto>> Post(MascotaDto MascotaDto)
         {
-            var Pais = _mapper.Map<Pais>(PaisDto);
-            this._unitOfWork.Paises.Add(Pais);
+            var Mascota = _mapper.Map<Mascota>(MascotaDto);
+            this._unitOfWork.Mascotas.Add(Mascota);
             await _unitOfWork.SaveAsync();
-            if(Pais == null)
+            if(Mascota == null)
             {
                 return BadRequest();
             }
-            PaisDto.Id = Pais.Id;
-            return CreatedAtAction(nameof(Post), new {id = PaisDto.Id}, PaisDto);
+            MascotaDto.Id = Mascota.Id;
+            return CreatedAtAction(nameof(Post), new {id = MascotaDto.Id}, MascotaDto);
         }
 
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<PaisDto>> Put(int id, [FromBody] PaisDto PaisDto)
+        public async Task<ActionResult<MascotaDto>> Put(int id, [FromBody] MascotaDto MascotaDto)
         {
-            if(PaisDto == null)
+            if(MascotaDto == null)
             {
                 return NotFound();
             }
-            var Paises = _mapper.Map<Pais>(PaisDto);
-            _unitOfWork.Paises.Update(Paises);
+            var Mascotaes = _mapper.Map<Mascota>(MascotaDto);
+            _unitOfWork.Mascotas.Update(Mascotaes);
             await _unitOfWork.SaveAsync();
-            return PaisDto;
+            return MascotaDto;
         }
 
         [HttpDelete("{id}")]
@@ -77,12 +77,12 @@ public class PaisController: BaseController
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete(int id)
         {
-            var Pais = await _unitOfWork.Paises.GetIdAsync(id);
-            if(Pais == null)
+            var Mascota = await _unitOfWork.Mascotas.GetIdAsync(id);
+            if(Mascota == null)
             {
                 return NotFound();
             }
-            _unitOfWork.Paises.Remove(Pais);
+            _unitOfWork.Mascotas.Remove(Mascota);
             await _unitOfWork.SaveAsync();
             return NoContent();
         }

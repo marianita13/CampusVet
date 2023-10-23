@@ -15,6 +15,11 @@ namespace APIVET.Profiles
                 CreateMap<Pais,PaisDto>().ReverseMap();
                 CreateMap<Departamento,DepartamentoDto>().ReverseMap();
                 CreateMap<Ciudad,CiudadDto>().ReverseMap();
+                CreateMap<ClienteDireccion,ClienteDirDto>().ReverseMap();
+                CreateMap<ClienteTelefono,ClienteTelDto>().ReverseMap();
+                CreateMap<Mascota,MascotaDto>().ReverseMap();
+                CreateMap<Raza,RazaDto>().ReverseMap();
+                CreateMap<Servicio,ServicioDto>().ReverseMap();
             }
     }
 }

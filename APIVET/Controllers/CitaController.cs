@@ -1,17 +1,17 @@
-using APIVET.Controllers;
 using APIVET.Dtos;
+using APIVET.Controllers;
 using AutoMapper;
-using Core.entities;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Core.entities;
 
 namespace API.Controllers;
-public class PaisController: BaseController
+public class CitaController: BaseController
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public PaisController(IUnitOfWork unitOfWork, IMapper mapper)
+        public CitaController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -20,56 +20,56 @@ public class PaisController: BaseController
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<IEnumerable<PaisDto>>> Get()
+        public async Task<ActionResult<IEnumerable<CitaDto>>> Get()
         {
-            var Paises = await _unitOfWork.Paises.GetAllAsync();
-            return _mapper.Map<List<PaisDto>>(Paises);
+            var Citaes = await _unitOfWork.Citas.GetAllAsync();
+            return _mapper.Map<List<CitaDto>>(Citaes);
         }
 
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<PaisDto>> Get(int id)
+        public async Task<ActionResult<CitaDto>> Get(int id)
         {
-            var Pais = await _unitOfWork.Paises.GetIdAsync(id);
-            if(Pais == null)
+            var Cita = await _unitOfWork.Citas.GetIdAsync(id);
+            if(Cita == null)
             {
                 return NotFound();
             }
-            return _mapper.Map<PaisDto>(Pais);
+            return _mapper.Map<CitaDto>(Cita);
         }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<PaisDto>> Post(PaisDto PaisDto)
+        public async Task<ActionResult<CitaDto>> Post(CitaDto CitaDto)
         {
-            var Pais = _mapper.Map<Pais>(PaisDto);
-            this._unitOfWork.Paises.Add(Pais);
+            var Cita = _mapper.Map<Cita>(CitaDto);
+            this._unitOfWork.Citas.Add(Cita);
             await _unitOfWork.SaveAsync();
-            if(Pais == null)
+            if(Cita == null)
             {
                 return BadRequest();
             }
-            PaisDto.Id = Pais.Id;
-            return CreatedAtAction(nameof(Post), new {id = PaisDto.Id}, PaisDto);
+            CitaDto.Id = Cita.Id;
+            return CreatedAtAction(nameof(Post), new {id = CitaDto.Id}, CitaDto);
         }
 
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<PaisDto>> Put(int id, [FromBody] PaisDto PaisDto)
+        public async Task<ActionResult<CitaDto>> Put(int id, [FromBody] CitaDto CitaDto)
         {
-            if(PaisDto == null)
+            if(CitaDto == null)
             {
                 return NotFound();
             }
-            var Paises = _mapper.Map<Pais>(PaisDto);
-            _unitOfWork.Paises.Update(Paises);
+            var Citaes = _mapper.Map<Cita>(CitaDto);
+            _unitOfWork.Citas.Update(Citaes);
             await _unitOfWork.SaveAsync();
-            return PaisDto;
+            return CitaDto;
         }
 
         [HttpDelete("{id}")]
@@ -77,12 +77,12 @@ public class PaisController: BaseController
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete(int id)
         {
-            var Pais = await _unitOfWork.Paises.GetIdAsync(id);
-            if(Pais == null)
+            var Cita = await _unitOfWork.Citas.GetIdAsync(id);
+            if(Cita == null)
             {
                 return NotFound();
             }
-            _unitOfWork.Paises.Remove(Pais);
+            _unitOfWork.Citas.Remove(Cita);
             await _unitOfWork.SaveAsync();
             return NoContent();
         }

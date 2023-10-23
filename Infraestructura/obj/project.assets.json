@@ -724,19 +724,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\USER\\.nuget\\packages\\": {}
+    "C:\\Users\\Janus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USER\\Desktop\\CampusVet\\Infraestructura\\Infraestructura.csproj",
+      "projectUniqueName": "C:\\Users\\Janus\\OneDrive\\Escritorio\\CampusVet\\Infraestructura\\Infraestructura.csproj",
       "projectName": "Infraestructura",
-      "projectPath": "C:\\Users\\USER\\Desktop\\CampusVet\\Infraestructura\\Infraestructura.csproj",
-      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USER\\Desktop\\CampusVet\\Infraestructura\\obj\\",
+      "projectPath": "C:\\Users\\Janus\\OneDrive\\Escritorio\\CampusVet\\Infraestructura\\Infraestructura.csproj",
+      "packagesPath": "C:\\Users\\Janus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Janus\\OneDrive\\Escritorio\\CampusVet\\Infraestructura\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Janus\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -748,8 +748,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\USER\\Desktop\\CampusVet\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\USER\\Desktop\\CampusVet\\Core\\Core.csproj"
+            "C:\\Users\\Janus\\OneDrive\\Escritorio\\CampusVet\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\Janus\\OneDrive\\Escritorio\\CampusVet\\Core\\Core.csproj"
             }
           }
         }
@@ -793,7 +793,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -6,12 +6,12 @@ using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
-public class PaisController: BaseController
+public class RazaController: BaseController
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public PaisController(IUnitOfWork unitOfWork, IMapper mapper)
+        public RazaController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -20,56 +20,56 @@ public class PaisController: BaseController
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<IEnumerable<PaisDto>>> Get()
+        public async Task<ActionResult<IEnumerable<RazaDto>>> Get()
         {
-            var Paises = await _unitOfWork.Paises.GetAllAsync();
-            return _mapper.Map<List<PaisDto>>(Paises);
+            var Razaes = await _unitOfWork.Razas.GetAllAsync();
+            return _mapper.Map<List<RazaDto>>(Razaes);
         }
 
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<PaisDto>> Get(int id)
+        public async Task<ActionResult<RazaDto>> Get(int id)
         {
-            var Pais = await _unitOfWork.Paises.GetIdAsync(id);
-            if(Pais == null)
+            var Raza = await _unitOfWork.Razas.GetIdAsync(id);
+            if(Raza == null)
             {
                 return NotFound();
             }
-            return _mapper.Map<PaisDto>(Pais);
+            return _mapper.Map<RazaDto>(Raza);
         }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<PaisDto>> Post(PaisDto PaisDto)
+        public async Task<ActionResult<RazaDto>> Post(RazaDto RazaDto)
         {
-            var Pais = _mapper.Map<Pais>(PaisDto);
-            this._unitOfWork.Paises.Add(Pais);
+            var Raza = _mapper.Map<Raza>(RazaDto);
+            this._unitOfWork.Razas.Add(Raza);
             await _unitOfWork.SaveAsync();
-            if(Pais == null)
+            if(Raza == null)
             {
                 return BadRequest();
             }
-            PaisDto.Id = Pais.Id;
-            return CreatedAtAction(nameof(Post), new {id = PaisDto.Id}, PaisDto);
+            RazaDto.Id = Raza.Id;
+            return CreatedAtAction(nameof(Post), new {id = RazaDto.Id}, RazaDto);
         }
 
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<PaisDto>> Put(int id, [FromBody] PaisDto PaisDto)
+        public async Task<ActionResult<RazaDto>> Put(int id, [FromBody] RazaDto RazaDto)
         {
-            if(PaisDto == null)
+            if(RazaDto == null)
             {
                 return NotFound();
             }
-            var Paises = _mapper.Map<Pais>(PaisDto);
-            _unitOfWork.Paises.Update(Paises);
+            var Razaes = _mapper.Map<Raza>(RazaDto);
+            _unitOfWork.Razas.Update(Razaes);
             await _unitOfWork.SaveAsync();
-            return PaisDto;
+            return RazaDto;
         }
 
         [HttpDelete("{id}")]
@@ -77,12 +77,12 @@ public class PaisController: BaseController
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete(int id)
         {
-            var Pais = await _unitOfWork.Paises.GetIdAsync(id);
-            if(Pais == null)
+            var Raza = await _unitOfWork.Razas.GetIdAsync(id);
+            if(Raza == null)
             {
                 return NotFound();
             }
-            _unitOfWork.Paises.Remove(Pais);
+            _unitOfWork.Razas.Remove(Raza);
             await _unitOfWork.SaveAsync();
             return NoContent();
         }
